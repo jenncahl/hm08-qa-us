@@ -14,4 +14,7 @@ I changed log level to ''error'' from ''info'',  I added ''intercept''service, t
 To better understand where is a mistake in my code, I was testing one by one, using ''it.only'' in my code.
 Was easier for me to understand mistakes.
 In the end I push and commit all changes to my github account.
+I applied functional testing in this project.
+
+To run my tests, you need to update URL in wdio.config.js file,and then run command ''npm wdio run ''
 
