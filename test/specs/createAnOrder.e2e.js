@@ -6,8 +6,10 @@ describe('Create an order', () => {
   it('should set the address', async () => {
     await browser.url('/');
     await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
-    await expect($('#from')).toBeExisting();
-    await expect($('#to')).toBeExisting();
+    const fromField = await $(page.fromField);
+    await expect(fromField).toBeExisting();
+    const toField = await $(page.toField);
+    await expect(toField).toBeExisting();
   });
 
   it('should be able to select supportive plan', async () => {
@@ -99,7 +101,7 @@ describe('Create an order', () => {
 
   
 
-  it.only('should open driver details in car modal', async () => {
+  it('should open driver details in car modal', async () => {
     await browser.url('/');
     await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
     const supportiveTariffButton = await $(page.supportiveTariffButton);
